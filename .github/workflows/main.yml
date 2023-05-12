@@ -25,4 +25,4 @@ jobs:
       with:
         dokku_repo: 'ssh://dokku@18.135.196.165:22/sportfin-help-center'
         ssh_key: ${{ secrets.SSH_KEY }}
-        deploy_branch: 'develop'
+        deploy_branch: 'main'
