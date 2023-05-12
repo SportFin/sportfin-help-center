@@ -23,6 +23,6 @@ jobs:
     - name: Push to dokku
       uses: obrassard/action-dokku-deploy@v1.0.2
       with:
-        dokku_repo: 'ssh://ubuntu@18.135.196.165:22/sportfin-help-center'
+        dokku_repo: 'ssh://root@18.135.196.165:22/sportfin-help-center'
         ssh_key: ${{ secrets.SSH_KEY }}
         deploy_branch: 'develop'
