@@ -99,7 +99,7 @@ DATABASES = {
         "USER": "username",
         "PASSWORD": "password",
         "HOST": "localhost",
-        "PORT": "5422",
+        "PORT": "5432",
     }
 }
 # DATABASES = {
