@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  sportfin:
+    container_name: sportfin-help
+    stdin_open: true
+    tty: true
+    build: .
+    volumes:
+      - type: bind
+        source: ./
+        target: /code
+    ports: 
+      - 8000:80
+    env_file:
+      - .env
+  db:
+    image: postgres:12-alpine
+    container_name: sportfin-help-db
+    env_file:
+      - .env
+    ports:
+      - 5422:5422
+    volumes:
+      - type: bind
+        source: ./db_data
+        target: /var/lib/postgresql/data

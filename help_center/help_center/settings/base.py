@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "blog",
+    "markdown",
 ]
 
 MIDDLEWARE = [
@@ -84,13 +86,32 @@ WSGI_APPLICATION = "help_center.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "sportfin-help-db",
+        "USER": "username",
+        "PASSWORD": "password",
+        "HOST": "localhost",
+        "PORT": "5422",
     }
 }
-
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": os.environ["RDS_DB_NAME"],
+#         "USER": os.environ["RDS_USERNAME"],
+#         "PASSWORD": os.environ["RDS_PASSWORD"],
+#         "HOST": os.environ["RDS_HOSTNAME"],
+#         "PORT": os.environ["RDS_PORT"],
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
