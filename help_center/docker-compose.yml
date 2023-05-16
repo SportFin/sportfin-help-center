@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   sportfin:
-    container_name: sportfin-help
+    container_name: sportfin-help-center
     stdin_open: true
     tty: true
     build: .
