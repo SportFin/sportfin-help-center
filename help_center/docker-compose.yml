@@ -10,7 +10,7 @@ services:
         source: ./
         target: /code
     ports: 
-      - 8000:80
+      - 80:80
     env_file:
       - .env
   db:
