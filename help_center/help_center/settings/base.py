@@ -95,10 +95,10 @@ WSGI_APPLICATION = "help_center.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "sportfin-help-db",
-        "USER": "username",
-        "PASSWORD": "password",
-        "HOST": "localhost",
+        "NAME": "sportfin_help_db",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "db",
         "PORT": "5432",
     }
 }
