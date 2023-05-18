@@ -16,7 +16,7 @@ import dj_database_url
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
+SECRET_KEY = "django-insecure-^y258d-3872_ue3#giia$m*!2%!uu*_z%0!shd98=8v!eh*qdw"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
