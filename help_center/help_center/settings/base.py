@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import dj_database_url
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -93,14 +94,10 @@ WSGI_APPLICATION = "help_center.wsgi.application"
 #     }
 # }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "sportfin_help_db",
-        "USER": "postgres",
-        "PASSWORD": "password",
-        "HOST": "db",
-        "PORT": "5432",
-    }
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    ),
 }
 # DATABASES = {
 #     "default": {
