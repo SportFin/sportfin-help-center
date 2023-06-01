@@ -3,7 +3,7 @@ name: 'Deploy to my Dokku instance'
 on:
   push:
     branches:
-    - main
+    - basic-config
 
 jobs:
   deploy:
@@ -25,4 +25,4 @@ jobs:
       with:
         dokku_repo: 'ssh://dokku@18.135.196.165:22/sportfin-help-center'
         ssh_key: ${{ secrets.SSH_KEY }}
-        deploy_branch: 'docker-tool'
+        deploy_branch: 'basic-config'
