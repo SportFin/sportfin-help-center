@@ -1,5 +1,5 @@
 """
-WSGI config for help_c project.
+WSGI config for basic_django project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "help_c.settings.dev")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "basic_django.settings")
 
 application = get_wsgi_application()
