@@ -18,8 +18,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - name: Push to dokku
-        uses: obrassard/action-dokku-deploy@v1.0.2
+      - name: Dokku Deploy action
+        uses: dokku/github-action@master
+
         with:
            dokku_repo: 'ssh://dokku@18.135.196.165:22/basicdjango'
            ssh_key: ${{ secrets.SSH_KEY }}
