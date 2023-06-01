@@ -22,7 +22,7 @@ jobs:
         uses: dokku/github-action@master
 
         with:
-           dokku_repo: 'ssh://dokku@18.135.196.165:22/basicdjango'
-           ssh_key: ${{ secrets.SSH_KEY }}
-           deploy_branch: 'basic-config'
+           git_remote_url: 'ssh://dokku@18.135.196.165:22/basicdjango'
+           ssh_private_key: ${{ secrets.SSH_KEY }}
+           branch: 'basic-config'
 
