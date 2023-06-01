@@ -20,6 +20,6 @@ jobs:
 
       - name: Deploy to Dokku
         run: |
-          ssh dokku@18.135.196.165:22
+          ssh dokku@18.135.196.165:22 apps:create basicdjango
           git remote add dokku dokku@18.135.196.165:22:basicdjango
           git push dokku basic-config  # Change to the branch you want to push from
