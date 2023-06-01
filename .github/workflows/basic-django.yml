@@ -1,0 +1,24 @@
+name: Deploy to Dokku
+
+on:
+  push:
+    branches:
+      - basic-config
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: Deploy to Dokku
+        run: |
+          git remote add dokku dokku@18.135.196.165:22:basicdjango
+          git push dokku basic-config  # Change to the branch you want to push from
