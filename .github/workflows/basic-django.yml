@@ -18,8 +18,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - name: Deploy to Dokku
-        run: |
-          ssh dokku@18.135.196.165:22/sportfin-help-center
-          git remote add dokku dokku@18.135.196.165:22:basicdjango
-          git push dokku basic-config  # Change to the branch you want to push from
+      - name: Push to dokku
+        uses: obrassard/action-dokku-deploy@v1.0.2
+        with:
+           dokku_repo: 'ssh://dokku@18.135.196.165:22/basicdjango'
+           ssh_key: ${{ secrets.SSH_KEY }}
+           deploy_branch: 'basic-config'
+
