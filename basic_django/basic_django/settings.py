@@ -73,10 +73,15 @@ WSGI_APPLICATION = "basic_django.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASE_URL:  postgres://postgres:564b07bbd5743857ce0d0caba9c55112@dokku-postgres-basicdjango-db:5432/basicdjango_db
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'basicdjango_db',                      
+        'USER': 'postgres',
+        'PASSWORD': '564b07bbd5743857ce0d0caba9c55112',
+        'HOST': 'dokku-postgres-basicdjango-db',
+        'PORT': '5432',
     }
 }
 
