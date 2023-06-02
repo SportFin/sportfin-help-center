@@ -1,1 +1,1 @@
-web: gunicorn help_center.wsgi
+web: gunicorn basic_django.wsgi
