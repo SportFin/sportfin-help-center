@@ -43,7 +43,7 @@ COPY --chown=wagtail:wagtail . .
 USER wagtail
 
 # Collect static files.
-RUN python help_center/manage.py collectstatic --noinput --clear
+RUN python manage.py collectstatic --noinput --clear
 
 # Runtime command that executes when "docker run" is called, it does the
 # following:
@@ -54,4 +54,4 @@ RUN python help_center/manage.py collectstatic --noinput --clear
 #   PRACTICE. The database should be migrated manually or using the release
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
-CMD set -xe; python help_center/manage.py migrate --noinput; gunicorn help_center.help_center.wsgi:application
+CMD set -xe; python manage.py migrate --noinput; gunicorn help_center.help_center.wsgi:application
