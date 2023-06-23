@@ -61,7 +61,7 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "help_center.urls"
+ROOT_URLCONF = "help_center.help_center.urls"
 
 TEMPLATES = [
     {
