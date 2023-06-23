@@ -1,4 +1,4 @@
-from help_center.help_center.base import *
+from .base import *
 
 DEBUG = False
 
