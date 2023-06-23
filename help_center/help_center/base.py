@@ -23,7 +23,7 @@ SECRET_KEY = "django-insecure-^y258d-3872_ue3#giia$m*!2%!uu*_z%0!shd98=8v!eh*qdw
 
 
 # Application definition
-
+ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "home",
     "search",
