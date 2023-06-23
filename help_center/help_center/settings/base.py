@@ -25,6 +25,8 @@ SECRET_KEY = "django-insecure-^y258d-3872_ue3#giia$m*!2%!uu*_z%0!shd98=8v!eh*qdw
 # Application definition
 
 INSTALLED_APPS = [
+    "../../home/",
+    "../../search/",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -44,7 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "blog",
+    "../../blog",
     "markdown",
 ]
 
