@@ -93,22 +93,22 @@ WSGI_APPLICATION = "help_center.help_center.wsgi.application"
 #         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
 #     }
 # }
-DATABASES = {
-    "default": dj_database_url.config(
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
-}
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql_psycopg2",
-#         "NAME": os.environ["RDS_DB_NAME"],
-#         "USER": os.environ["RDS_USERNAME"],
-#         "PASSWORD": os.environ["RDS_PASSWORD"],
-#         "HOST": os.environ["RDS_HOSTNAME"],
-#         "PORT": os.environ["RDS_PORT"],
-#     }
+#     "default": dj_database_url.config(
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     ),
 # }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "password",
+        "HOST": "db",
+        "PORT": "5433",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
