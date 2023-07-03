@@ -1,58 +1,28 @@
-# Use an official Python runtime based on Debian 10 "buster" as a parent image.
-FROM python:3.8.1-slim-buster
+# Use an official Python runtime as the base image
+FROM python:3.9
 
-# Add user that will be used in the container.
-RUN useradd wagtail
-
-
-# Set environment variables.
-# 1. Force Python stdout and stderr streams to be unbuffered.
-# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
-#    command.
-
-
-# Install system packages required by Wagtail and Django.
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    libmariadbclient-dev \
-    libjpeg62-turbo-dev \
-    zlib1g-dev \
-    libwebp-dev \
- && rm -rf /var/lib/apt/lists/*
-
-# Install the application server.
-RUN pip install "gunicorn==20.0.4"
-
-# Install the project requirements.
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
-
-# Use /app folder as a directory where the source code is stored.
+# Set the working directory in the container
 WORKDIR /app
 
-# Set this directory to be owned by the "wagtail" user. This Wagtail project
-# uses SQLite, the folder needs to be owned by the user that
-# will be writing to the database file.
-RUN chown wagtail:wagtail /app
+# Copy the requirements.txt file to the working directory
+COPY requirements.txt .
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the source code of the project into the container.
-COPY --chown=wagtail:wagtail . .
+# Copy the rest of the application code to the working directory
+COPY . .
 
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
+# Set environment variables if needed (e.g., for production settings)
+# ENV DJANGO_SETTINGS_MODULE=myapp.settings.production
 
-# Collect static files.
-RUN python manage.py collectstatic --noinput --clear
+# Run any additional commands (e.g., migrations, collectstatic)
+# RUN python manage.py migrate && python manage.py collectstatic --noinput
+# WORKDIR /app/sportfinDemo
+# RUN python manage.py migrate
 
-# Runtime command that executes when "docker run" is called, it does the
-# following:
-#   1. Migrate the database.
-#   2. Start the application server.
-# WARNING:
-#   Migrating database at the same time as starting the server IS NOT THE BEST
-#   PRACTICE. The database should be migrated manually or using the release
-#   phase facilities of your hosting platform. This is used only so the
-#   Wagtail instance can be started with a simple "docker run" command.
-# CMD set -xe; python manage.py migrate --noinput; gunicorn help_center.help_center.wsgi:application
-CMD set -xe; python manage.py migrate --noinput; python manage.py runserver
+# Expose the port the Django app will run on
+EXPOSE 8000
+
+# Start the Django development server
+# CMD ["python", "sportfinDemo/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "sportfinDemo.wsgi:application", "--bind", "0.0.0.0:8000"]
