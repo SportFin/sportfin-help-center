@@ -83,17 +83,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "help_center.help_center.wsgi.application"
 
-# postgres://postgres:2a1a484d79a72f67d0b5abd39afcc535@dokku-postgres-help-center-db:5432/help_center_db"
+# postgres://postgres:df7b1472bdab8fe58b7f0dc379a5ad48@dokku-postgres-help-center-db:5432/help_center_db
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "help_center_db",
         "USER": "postgres",
-        "PASSWORD": "2a1a484d79a72f67d0b5abd39afcc535",
+        "PASSWORD": "df7b1472bdab8fe58b7f0dc379a5ad48",
         "HOST": "dokku-postgres-help-center-db",
         "PORT": "5432",
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
