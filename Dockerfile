@@ -17,12 +17,10 @@ COPY . .
 
 # Run any additional commands (e.g., migrations, collectstatic)
 # RUN python manage.py migrate && python manage.py collectstatic --noinput
-# WORKDIR /app/sportfinDemo
 # RUN python manage.py migrate
 
 # Expose the port the Django app will run on
 EXPOSE 8000
 
 # Start the Django development server
-# CMD ["python", "sportfinDemo/manage.py", "runserver", "0.0.0.0:8000"]
-CMD ["gunicorn", "sportfinDemo.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "help_center.help_center.wsgi:application", "--bind", "0.0.0.0:8000"]
