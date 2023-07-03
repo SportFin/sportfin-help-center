@@ -92,7 +92,7 @@ class Command(BaseCommand):
                 )
 
             # add the modified articles to wagtail
-            home = Page.objects.get(id=5)
+            home = Page.objects.get(id=32)
             my_page = PostPage(
                 title=element["title"],
                 body=html_doc,
