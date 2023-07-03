@@ -1,6 +1,6 @@
 import requests
 from django.core.management import BaseCommand
-from wagtail.core.models import Page
+from wagtail.models import Page
 from blog.models import BlogPage, PostPage
 from html.parser import HTMLParser
 import urllib.request

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="342" height="342" viewBox="0 0 342 342">
+  <defs>
+    <filter id="Path_31" x="47.061" y="38.873" width="141.441" height="280.549" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.341"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_32" x="157.587" y="38.873" width="141.444" height="280.549" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-opacity="0.341"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Union_1" x="22.241" y="201.5" width="296.517" height="61" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.341"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_32" data-name="Group 32" transform="translate(2794 -1151)">
+    <circle id="Ellipse_17" data-name="Ellipse 17" cx="171" cy="171" r="171" transform="translate(-2794 1151)" fill="#fff"/>
+    <g transform="matrix(1, 0, 0, 1, -2794, 1151)" filter="url(#Path_31)">
+      <path id="Path_31-2" data-name="Path 31" d="M-2800.921,1259.845c20.308-9.231,107.692-54.154,107.692-54.154s.615,249.231,0,249.231c-.273,0-29.678-29.694-56-71.385C-2781.987,1331.651-2812.212,1264.978-2800.921,1259.845Z" transform="translate(2866 -1159)" fill="#1d71b8" stroke="#fff" stroke-width="1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -2794, 1151)" filter="url(#Path_32)">
+      <path id="Path_32-2" data-name="Path 32" d="M-2695.367,1259.845c-20.308-9.231-107.692-54.154-107.692-54.154s-.615,249.231,0,249.231c.273,0,29.678-29.694,56-71.385C-2714.3,1331.651-2684.076,1264.978-2695.367,1259.845Z" transform="translate(2976.38 -1159)" fill="#3aaa35" stroke="#fff" stroke-width="1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -2794, 1151)" filter="url(#Union_1)">
+      <path id="Union_1-2" data-name="Union 1" d="M264.672,42h-37V28h-179V42H0L10.671,29.548V26.453L0,14H27.671V0h219V14h29.671L265.672,26.454v3.093L276.343,42Z" transform="translate(32.33 206)" fill="#2a327d" stroke="#fff" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
