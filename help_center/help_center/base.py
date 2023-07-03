@@ -83,29 +83,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "help_center.help_center.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-#     }
-# }
-# DATABASES = {
-#     "default": dj_database_url.config(
-#         conn_max_age=600,
-#         conn_health_checks=True,
-#     ),
-# }
+# postgres://postgres:2a1a484d79a72f67d0b5abd39afcc535@dokku-postgres-help-center-db:5432/help_center_db"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
+        "NAME": "help_center_db",
         "USER": "postgres",
-        "PASSWORD": "password",
-        "HOST": "db",
+        "PASSWORD": "2a1a484d79a72f67d0b5abd39afcc535",
+        "HOST": "dokku-postgres-help-center-db",
         "PORT": "5432",
     }
 }
