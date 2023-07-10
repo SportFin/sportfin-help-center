@@ -4,8 +4,9 @@ from django.core.management import BaseCommand
 from wagtail.models import Page
 from blog.models import BlogPage, PostPage
 import markdown
+from django.conf import settings
 
-folder_path = "/docs/"
+folder_path = settings.DOCS_DIR
 
 home = Page.objects.get(id=32)
 
