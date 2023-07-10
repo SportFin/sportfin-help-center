@@ -6,7 +6,7 @@ from blog.models import BlogPage, PostPage
 import markdown
 from django.conf import settings
 
-folder_path = "/docs/"
+folder_path = "/sportfin-help-center/docs"
 
 home = Page.objects.get(id=32)
 
