@@ -5,7 +5,7 @@ from wagtail.models import Page
 from blog.models import BlogPage, PostPage
 import markdown
 
-folder_path = "/sportfin_clo/sportfin-help-center/docs/"
+folder_path = "../../../docs/"
 
 home = Page.objects.get(id=32)
 
