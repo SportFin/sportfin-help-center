@@ -6,8 +6,8 @@ from blog.models import BlogPage, PostPage
 import markdown
 from django.conf import settings
 
-folder_path = "/sportfin-help-center/docs"
-
+folder_path = "help_center.docs"
+print(folder_path)
 home = Page.objects.get(id=32)
 
 # Retrieve all Markdown files from the folder
