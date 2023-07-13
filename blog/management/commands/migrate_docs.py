@@ -8,7 +8,7 @@ from django.conf import settings
 
 folder_path = "help_center/docs"
 print(folder_path)
-home = Page.objects.get(id=56)
+home = Page.objects.get(id=32)
 
 # Retrieve all Markdown files from the folder
 md_files = glob.glob(os.path.join(folder_path, "*.md"))
