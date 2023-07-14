@@ -23,6 +23,6 @@ jobs:
     - name: Push to dokku
       uses: obrassard/action-dokku-deploy@v1.0.2
       with:
-        dokku_repo: 'ssh://dokku@ec2-3-10-211-137.eu-west-2.compute.amazonaws.com:help-center'
+        dokku_repo: 'ssh://dokku@ec2-3-10-211-137.eu-west-2.compute.amazonaws.com/help-center'
         ssh_key: ${{ secrets.SSH_KEY }}
         deploy_branch: 'main'
