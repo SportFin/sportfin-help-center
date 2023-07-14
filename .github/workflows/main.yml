@@ -15,6 +15,9 @@ jobs:
       with:
         access_token: ${{ github.token }}
     
+    - name: Clean Up Docker
+      run: docker system prune -f
+    
     - name: Cloning repo # This step is required
       uses: actions/checkout@v2
       with:
